@@ -5,20 +5,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "speakers")
-public class Speaker {
+@Entity(name = "attendees")
+public class Attendee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long speaker_id;
+    private Long attendee_id;
 
     private String first_name;
     private String last_name;
     private String title;
     private String company;
-    private String speaker_bio;
+    private String email;
+    private String phone_number;
 
-    public Speaker() {
+    public Attendee() {
+    }
 
+
+    public Long getAttendee_id() {
+        return attendee_id;
+    }
+
+    public void setAttendee_id(Long attendee_id) {
+        this.attendee_id = attendee_id;
     }
 
     public String getFirst_name() {
@@ -53,13 +62,19 @@ public class Speaker {
         this.company = company;
     }
 
-    public String getSpeaker_bio() {
-        return speaker_bio;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSpeaker_bio(String speaker_bio) {
-        this.speaker_bio = speaker_bio;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
+    public String getPhone_number() {
+        return phone_number;
+    }
 
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
 }
